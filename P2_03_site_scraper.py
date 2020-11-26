@@ -32,3 +32,14 @@ category_urls = []
 for ref in category_refs:
 	category_urls.append("/".join(main_url.split("/")[:-1]) + "/" + ref)
 
+def paginator(url):
+	soup = getAndParseURL(url)
+	if len(soup.find_all("ul", class_ = "pager")) >= 1:
+		while len(soup.findAll("a", href=re.compile("page"))) == 2 or len(pages_urls) == 1:
+
+			new_url = "/".join(pages_urls[-1].split("/")[:-1]) + "/" + soup.findAll("a", href=re.compile("page"))[-1].get("href")
+
+			pages_urls.append(new_url)
+
+			soup = getAndParseURL(new_url)
+

@@ -107,3 +107,8 @@ for url in category_urls[1:]:
 	scraped_data.index += 1
 
 	scraped_data.to_csv(categories[0] + '.csv', encoding="latin1")
+
+	source = categories[0] + '.csv'
+	destination = "category_files"
+
+	shutil.move(source, destination)

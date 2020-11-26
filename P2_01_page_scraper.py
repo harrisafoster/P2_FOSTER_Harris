@@ -25,3 +25,5 @@ nb_in_stock = re.sub("[^0-9]", "", soup.find("p", class_ = "instock availability
 
 img_url = main_url.replace("index.html", "") + soup.find("img").get("src")
 
+category = soup.find("a", href = re.compile("../category/books/")).get("href").split("/")[3]
+

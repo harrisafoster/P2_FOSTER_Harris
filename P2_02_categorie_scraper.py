@@ -32,3 +32,14 @@ booksURLs = []
 for page in pages_urls:
 	booksURLs.extend(getBooksURLs(page))
 
+names = []
+prices_with_tax = []
+prices_without_tax = []
+nb_in_stock = []
+img_urls = []
+categories = []
+ratings = []
+upcs = []
+product_page_urls = []
+descriptions = []
+

@@ -35,3 +35,5 @@ upc = soup.find("td").text
 
 product_page_url = main_url
 
+scraped_data = pd.DataFrame({'title': name, 'product_description': description, 'price_excluding_tax': price_without_tax, 'price_including_tax': price_with_tax, 'number_available': nb_in_stock, "image_url": img_url, 'category': category, 'review_rating': rating_number, 'universal_ product_code (upc)': upc, 'product_page_url': product_page_url}, index=[0])
+

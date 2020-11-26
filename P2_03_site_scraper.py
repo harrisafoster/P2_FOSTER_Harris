@@ -27,3 +27,8 @@ for ul in soup.find_all('ul', class_="nav nav-list"):
 		hrefs = a.get('href')
 		category_refs.append(hrefs)
 
+category_urls = []
+
+for ref in category_refs:
+	category_urls.append("/".join(main_url.split("/")[:-1]) + "/" + ref)
+

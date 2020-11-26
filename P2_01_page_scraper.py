@@ -27,3 +27,7 @@ img_url = main_url.replace("index.html", "") + soup.find("img").get("src")
 
 category = soup.find("a", href = re.compile("../category/books/")).get("href").split("/")[3]
 
+rating = soup.find("p", class_ = re.compile("star-rating")).get("class")[1]
+rating = rating.lower()
+rating_number = str((w2n.word_to_num(rating))) + "/5"
+

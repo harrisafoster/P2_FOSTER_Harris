@@ -53,3 +53,10 @@ if os.path.exists('image_files'):
 time.sleep(.0000000000000001)
 os.mkdir('image_files')
 
+for url in category_urls[1:]:
+	pages_urls = [url]
+	paginator(url)
+	books_URLs = []
+	for page in pages_urls:
+		books_URLs.extend(getBooksURLs(page))
+	

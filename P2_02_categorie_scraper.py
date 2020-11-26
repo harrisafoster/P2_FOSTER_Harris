@@ -43,3 +43,33 @@ upcs = []
 product_page_urls = []
 descriptions = []
 
+for url in booksURLs:
+	soup = getAndParseURL(url)
+
+	names.append(soup.find("div", class_ = re.compile("product_main")).h1.text)
+
+	paragraphs = soup.find_all('p')
+
+	if len(paragraphs[3].text) > 10:
+		descriptions.append(paragraphs[3].text)
+	else: 
+		descriptions.append("No description available.")
+
+	tds = soup.find_all('td')
+	prices_without_tax.append(tds[2].text)
+	prices_with_tax.append(tds[3].text)
+
+	nb_in_stock.append(re.sub("[^0-9]", "", soup.find("p", class_ = "instock availability").text)) 
+
+	img_urls.append(url.replace("index.html", "") + soup.find("img").get("src"))
+
+	categories.append(soup.find("a", href = re.compile("../category/books/")).get("href").split("/")[3])
+
+	rating = soup.find("p", class_ = re.compile("star-rating")).get("class")[1]
+	rating = rating.lower()
+	ratings.append(str((w2n.word_to_num(rating))) + "/5")
+
+	upcs.append(soup.find("td").text)
+
+	product_page_urls.append(url)
+

@@ -43,3 +43,13 @@ def paginator(url):
 
 			soup = getAndParseURL(new_url)
 
+if os.path.exists('category_files'):
+	shutil.rmtree('category_files')
+time.sleep(.0000000000000001)
+os.mkdir('category_files')
+
+if os.path.exists('image_files'):
+	shutil.rmtree('image_files')
+time.sleep(.0000000000000001)
+os.mkdir('image_files')
+

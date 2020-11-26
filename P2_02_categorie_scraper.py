@@ -73,3 +73,6 @@ for url in booksURLs:
 
 	product_page_urls.append(url)
 
+scraped_data = pd.DataFrame({'title': names, 'product_description': descriptions, 'price_excluding_tax': prices_without_tax, 'price_including_tax': prices_with_tax, 'number_available': nb_in_stock, "image_url": img_urls, 'category': categories, 'review_rating': ratings, 'universal_ product_code (upc)': upcs, 'product_page_url': product_page_urls})
+
+scraped_data.to_csv("category_scrape.csv", encoding="latin1")

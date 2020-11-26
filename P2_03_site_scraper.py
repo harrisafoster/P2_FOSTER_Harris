@@ -112,3 +112,10 @@ for url in category_urls[1:]:
 	destination = "category_files"
 
 	shutil.move(source, destination)
+	
+	for url in img_urls:
+		r = requests.get(url, allow_redirects=True)
+		back_cut = url.rsplit("/", 7)[0]
+		final_cut = back_cut.replace("http://books.toscrape.com/catalogue/", "")
+		open(final_cut + '.jpg', 'wb').write(r.content)
+		shutil.move(final_cut + '.jpg', "image_files")

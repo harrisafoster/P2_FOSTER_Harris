@@ -31,3 +31,7 @@ rating = soup.find("p", class_ = re.compile("star-rating")).get("class")[1]
 rating = rating.lower()
 rating_number = str((w2n.word_to_num(rating))) + "/5"
 
+upc = soup.find("td").text
+
+product_page_url = main_url
+

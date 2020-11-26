@@ -59,4 +59,16 @@ for url in category_urls[1:]:
 	books_URLs = []
 	for page in pages_urls:
 		books_URLs.extend(getBooksURLs(page))
+
+	names = []
+	prices_with_tax = []
+	prices_without_tax = []
+	nb_in_stock = []
+	img_urls = []
+	categories = []
+	ratings = []
+	upcs = []
+	product_page_urls = []
+	descriptions = []
+
 	

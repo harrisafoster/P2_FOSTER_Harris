@@ -15,3 +15,7 @@ def getBooksURLs(url):
 	soup = getAndParseURL(url)
 	return(["/".join(url.split("/")[:-1]) + "/" + x.div.a.get('href') for x in soup.find_all("article", class_="product_pod")])
 
+pages_urls = [main_url]
+
+soup = getAndParseURL(pages_urls[0])
+

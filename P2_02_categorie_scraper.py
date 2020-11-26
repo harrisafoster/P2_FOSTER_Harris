@@ -28,3 +28,7 @@ if len(soup.find_all("ul", class_ = "pager")) >= 1:
 
 		soup = getAndParseURL(new_url)
 
+booksURLs = []
+for page in pages_urls:
+	booksURLs.extend(getBooksURLs(page))
+

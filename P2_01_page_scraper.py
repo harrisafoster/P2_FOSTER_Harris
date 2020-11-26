@@ -16,3 +16,7 @@ if len(paragraphs[3].text) > 10:
 	description = paragraphs[3].text
 else: 
 	description = "No description available."
+
+tds = soup.find_all('td')
+price_without_tax = tds[2].text
+price_with_tax = tds[3].text

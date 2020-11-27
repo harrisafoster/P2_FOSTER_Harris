@@ -31,9 +31,9 @@ $ python P2_03_site_scraper.py
 ```
 ####Attention: Le script va prendre une dizaine de minutes pour terminer la récupération des données. Veuillez ne pas arrêter le script avant que ce soit terminé !
 
-Pour utiliser P2_01 ou P2_02 avec de differentes pages ou catégories, il suffit de changer le variable "main_url" dans le code python pour exécuter ces scripts avec les lives ou catégories désirées. 
+Pour utiliser P2_01 ou P2_02 avec de differentes pages ou catégories, il suffit de changer le variable "main_url" dans le code python pour exécuter ces scripts avec les livres ou catégories désirés. 
 Le script P2_03 va automatiquement chercher toutes les catégories, livres, et données de chaque livre, y compris l'image, pour tout le site. 
-Toutes les images sont stockées par catégorie dans des dossier distincts dénommé "nom_de_catégorie_image_files" dans le dossier créé "category_files" où vous trouverez également tous les fichiers .csv avec les données cherchées. 
+Toutes les images sont stockées par catégorie dans des dossiers distincts dénommés "nom_de_catégorie_image_files" dans le dossier créé "category_files" où vous trouverez également tous les fichiers .csv avec les données cherchées. 
 
 Pour faciliter la lecture de ces données. Je vous conseille d'ouvrir les fichiers .csv en encoding UTF-8 et en Anglais(U.S.A.). Cela laissera Excel lire les données de type 'float' en nombre décimale et pas en texte. 
 

@@ -83,8 +83,8 @@ for url in category_urls[1:]:
 			descriptions.append("No description available.")
 
 		tds = soup.find_all('td')
-		prices_without_tax.append(tds[2].text)
-		prices_with_tax.append(tds[3].text)
+		prices_without_tax.append(float((tds[2].text).split("£")[1]))
+		prices_with_tax.append(float((tds[3].text).split("£")[1]))
 
 		nb_in_stock.append(re.sub("[^0-9]", "", soup.find("p", class_ = "instock availability").text))
 
@@ -96,7 +96,7 @@ for url in category_urls[1:]:
 
 		rating = soup.find("p", class_ = re.compile("star-rating")).get("class")[1]
 		rating = rating.lower()
-		ratings.append(str((w2n.word_to_num(rating))) + "/5")
+		ratings.append(w2n.word_to_num(rating))
 
 		upcs.append(soup.find("td").text)
 

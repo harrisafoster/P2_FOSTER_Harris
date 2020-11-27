@@ -48,11 +48,6 @@ if os.path.exists('category_files'):
 time.sleep(.0000000000000001)
 os.mkdir('category_files')
 
-if os.path.exists('image_files'):
-	shutil.rmtree('image_files')
-time.sleep(.0000000000000001)
-os.mkdir('image_files')
-
 for url in category_urls[1:]:
 	pages_urls = [url]
 	paginator(url)
@@ -112,12 +107,17 @@ for url in category_urls[1:]:
 	destination = "category_files"
 
 	shutil.move(source, destination)
-	
+
+	if os.path.exists("category_files/" + categories[0] + "_image_files"):
+		shutil.rmtree("category_files/" + categories[0] + "_image_files")
+	time.sleep(.0000000000000001)
+	os.mkdir("category_files/" + categories[0] + "_image_files")
+
 	for url in img_urls:
 		r = requests.get(url, allow_redirects=True)
 		back_cut = url.rsplit("/", 7)[0]
 		final_cut = back_cut.replace("http://books.toscrape.com/catalogue/", "")
 		with open(final_cut + '.jpg', 'wb') as file_handle:
 			file_handle.write(r.content)
-		
-		shutil.move(final_cut + '.jpg', "image_files")
+
+		shutil.move(final_cut + '.jpg', "category_files/" + categories[0] + "_image_files")

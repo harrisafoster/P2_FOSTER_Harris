@@ -6,25 +6,30 @@ Il récupère les données, notamment product_page_url, universal_ product_code 
 Le script P2_03_site_scraper.py récupère aussi toutes les images sous format de .jpg. 
 
 ## Installation
-### For developers
-Clone the source locally:
+### Pour les développeurs (windows 10):
+#### Clonez la source localement:
 ```sh
 $ git clone https://github.com/harrisafoster/P2_FOSTER_Harris
 $ cd P2_Foster_Harris
 ```
+#### Créer et activer un environnement virtuel avec:
 ```sh
-Créer et activer un environnement virtuel avec:
 $ python -m venv env
 $ source ./env/Scripts/activate
+```
+#### Et installez les packages requis avec:
+```sh
 $ pip install -r requirements.txt
 ```
-Puis vous pouvez exécuter l'un des trois scripts avec:
+
+## Utilisation
+### Puis vous pouvez exécuter l'un des trois scripts avec:
 ```sh
 $ python P2_01_page_scraper.py
 $ python P2_02_categorie_scraper.py
 $ python P2_03_site_scraper.py
 ```
-## Utilisation
+
 Pour utiliser P2_01 ou P2_02 avec de differentes pages ou catégories, il suffit de changer le variable "main_url" dans le code python pour exécuter ces scripts avec les lives ou catégories désirées. 
 Le script P2_03 va automatiquement chercher toutes les catégories, livres, et données de chaque livre pour tout le site. 
 
